@@ -1,0 +1,59 @@
+<div class="header">
+  <h4 class="back-to-list" routerLink="/" routerLinkActive="active">
+    <i class="fa fa-arrow-left"></i> Heroes List
+  </h4>
+</div>
+<form class="heroes-form" [formGroup]="heroFom" (ngSubmit)="createHero()">
+  <h1>Hero Form</h1>
+  <mat-form-field class="first-name">
+    <input matInput formControlName="firstName" placeholder="First Name" />
+  </mat-form-field>
+  <span style="color:red;"
+    *ngIf="heroFom.get('firstName').invalid &&(heroFom.get('firstName').touched ||heroFom.get('firstName').dirty)"
+    >Please Enter the First Name</span
+  >
+
+  <mat-form-field class="last-name">
+    <input matInput formControlName="lastName" placeholder="Last Name" />
+  </mat-form-field>
+  <span style="color:red;"
+    *ngIf="heroFom.get('lastName').invalid &&(heroFom.get('lastName').touched ||heroFom.get('lastName').dirty)"
+    >Please Enter the Last Name</span
+  >
+  <mat-form-field>
+    <input
+      matInput
+      formControlName="DOB"
+      [matDatepicker]="picker"
+      placeholder="Date of Birth"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <span style="color:red;"
+    *ngIf="heroFom.get('DOB').invalid &&(heroFom.get('DOB').touched ||heroFom.get('DOB').dirty)"
+    >Please Enter the DOB</span
+  >
+  <mat-form-field class="contact">
+    <input
+      matInput
+      type="number"
+      formControlName="contact"
+      placeholder="Contact"
+    />
+  </mat-form-field>
+  <span style="color:red;"
+    *ngIf="heroFom.get('contact').invalid &&(heroFom.get('contact').touched ||heroFom.get('contact').dirty)"
+    >contact accepts 10 digit number only</span
+  >
+  <br />
+  <br />
+  <button
+    class="create-button"
+    [disabled]="heroFom.invalid"
+    mat-flat-button
+    color="primary"
+  >
+    Create a Hero
+  </button>
+</form>

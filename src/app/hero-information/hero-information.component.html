@@ -1,0 +1,11 @@
+<div class="header">
+  <h4 class="back-to-list" routerLink="/" routerLinkActive="active">
+    <i class="fa fa-arrow-left"></i> Heroes List
+  </h4>
+</div>
+<div class="heroes-information" *ngIf="hero">
+  <img class="hero_img" [src]=" '../assets/images/' + hero.image " />
+  <h2>{{hero.firstName}} {{hero.lastName}}</h2>
+  <h4>{{hero.DOB | date:mediumDate}}</h4>
+  <h4>{{hero.contact | number}}</h4>
+</div>

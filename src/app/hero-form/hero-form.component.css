@@ -1,0 +1,27 @@
+.header {
+  position: relative;
+  background-color: #303f9f;
+  padding: 50px;
+  padding-top: 10px;
+}
+
+.header .back-to-list {
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.heroes-form {
+  position: relative;
+  background-color: #ffffff;
+  top: -50px;
+  padding: 30px;
+  border-radius: 5px;
+  width: 700px;
+  margin: auto;
+  -webkit-box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.63);
+  box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.63);
+}
+.heroes-form .mat-form-field {
+  width: 100%;
+}
